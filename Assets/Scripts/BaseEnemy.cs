@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour
 {
-    public float healthPoint = 10f;
+    public HealthBarBehavior healthBar;
+    public int healthPoint = 10;
     public float damage;
     public int verticles;
 
-    private void Update()
+    protected void Start()
+    {
+        healthBar.SetMaxHealth(healthPoint);
+
+    }
+    protected void Update()
     {
         
     }
-    public void GetDamage(float damage)
+    public void GetDamage(int damage)
     {
         healthPoint -= damage;
+        healthBar.SetHealth((int)healthPoint);
         Debug.Log(healthPoint);
         if (healthPoint <= 0)
         {

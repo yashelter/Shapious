@@ -7,7 +7,7 @@ public class Controller : MonoBehaviour
     private Transform position;
     private float min, max;
     private float size = 1f;
-    private float damage = 1f;
+    private int damage = 1;
     // Start is called before the first frame update
     private void Start()
     {
